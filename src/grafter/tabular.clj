@@ -5,8 +5,7 @@
              [string :as str]]
             [grafter.tabular.common :as tabc :refer [lift->vector map-keys]]
             [incanter.core :as inc]
-            [potemkin.namespaces :refer [import-vars]]
-            [grafter.pipeline.types :as types])
+            [potemkin.namespaces :refer [import-vars]])
   (:import incanter.core.Dataset))
 
 ;; Load protocol definitions.  This could occur in the ns definition but putting
@@ -35,12 +34,7 @@
  [grafter.tabular.melt
   melt])
 
-(defmethod types/parse-parameter [String ::types/tabular-dataset] [_ val opts]
-  (read-dataset val))
 
-(swap! types/parameter-types derive incanter.core.Dataset ::types/tabular-dataset)
-
-(prefer-method types/parse-parameter [String ::types/file] [String java.util.Map])
 
 (defn test-dataset
   "Constructs a test dataset of r rows by c cols e.g.

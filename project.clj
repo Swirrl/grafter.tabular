@@ -8,29 +8,23 @@
 
   :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
                  [org.clojure/tools.logging "0.3.1"]
+                 [grafter "0.9.0-SNAPSHOT"] ;; depends on grafter.rdf.protocols
                  [commons-io/commons-io "2.4"]
                  [me.raynes/fs "1.4.6"]
                  [potemkin "0.4.3"]
 
                  [org.clojure/data.csv "0.1.3"]
                  [grafter/clj-excel "0.0.9" :exclusions [commons-codec]]
-                 [incanter/incanter-core "1.5.7" :exclusions [net.sf.opencsv/opencsv commons-codec]]
-                 #_[com.novemberain/pantomime "2.8.0"]] ;; mimetypes
+                 [incanter/incanter-core "1.5.7" :exclusions [net.sf.opencsv/opencsv commons-codec]]]
 
 
   :codox {:defaults {:doc "FIXME: write docs"
                      :doc/format :markdown}
           :output-dir "api-docs"
-          :sources ["src/tabular" "src/rdf-common" "src/pipeline"
-                   ;; Include docs from grafter-url project too
-                    "../grafter-url/src"]
 
           ;; TODO change this when we merge back to master
           :src-dir-uri "http://github.com/Swirrl/grafter/blob/0.8.x-SNAPSHOT/"
           :src-linenum-anchor-prefix "L"}
-
-  :source-paths ["src/common" "src/rdf-repository" "src/tabular"
-                 "src/templater" "src/rdf-common" "src/pipeline"]
 
   ;; Prevent Java process from appearing as a GUI app in OSX when
   ;; Swing classes are loaded.
