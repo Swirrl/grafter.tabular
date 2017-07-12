@@ -1,2 +1,0 @@
-<http://foo> <http://p> _:bnode1 .
-_:bnode1 <http://p> <http://bar> .

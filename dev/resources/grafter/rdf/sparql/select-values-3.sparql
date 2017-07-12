@@ -1,7 +1,0 @@
-SELECT * WHERE {
-  {
-    VALUES ?o {}
-  }
-
-  ?s ?p ?o .
-}
