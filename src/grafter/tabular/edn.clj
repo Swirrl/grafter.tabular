@@ -1,4 +1,4 @@
-(ns grafter.tabular.edn
+(ns ^{:deprecated "0.9.0"} grafter.tabular.edn
   {:no-doc true}
   (:require [grafter.tabular.common :as tab]
             [clojure.edn :as edn]

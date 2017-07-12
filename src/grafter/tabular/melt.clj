@@ -1,4 +1,4 @@
-(ns ^:no-doc grafter.tabular.melt
+(ns ^{:deprecated "0.9.0" :no-doc true} grafter.tabular.melt
   "Functions for melting data and building variations on melt."
   (:require
    [clojure.set :as set]

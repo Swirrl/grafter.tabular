@@ -1,4 +1,4 @@
-(ns grafter.rdf.preview
+(ns ^{:deprecated "0.9.0"} grafter.rdf.preview
   "Tool support for rendering previews of grafter.tabular graph-fn templates
   with values from datasets."
   (:require [clojure.walk]

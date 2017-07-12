@@ -1,4 +1,4 @@
-(ns grafter.tabular.csv
+(ns ^{:deprecated "0.9.0"} grafter.tabular.csv
   {:no-doc true}
   (:require [clojure.data.csv :as csv]
             [clojure.java.io :as io]

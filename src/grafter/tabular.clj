@@ -1,4 +1,4 @@
-(ns grafter.tabular
+(ns ^{:deprecated "0.9.0"} grafter.tabular
   "Functions for processing tabular data."
   (:require [clojure
              [set :as set]
