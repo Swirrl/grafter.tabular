@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
                  [org.clojure/tools.logging "0.3.1"]
-                 [grafter "0.9.0-SNAPSHOT"] ;; depends on grafter.rdf.protocols
+                 [grafter "0.9.0"] ;; depends on grafter.rdf.protocols
                  [commons-io/commons-io "2.4"]
                  [me.raynes/fs "1.4.6"]
                  [potemkin "0.4.3"]
