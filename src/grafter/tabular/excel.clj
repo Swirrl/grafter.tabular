@@ -9,7 +9,7 @@
 
 ;; Extend the clj-excel multi-method to handle expected grafter types
 ;; when outputting as an Excel file.
-(defmethod xls/cell-mutator org.openrdf.model.URI [^Cell cell ^org.openrdf.model.URI val] (.setCellValue cell (str val)))
+(defmethod xls/cell-mutator org.eclipse.rdf4j.model.URI [^Cell cell ^org.eclipse.rdf4j.model.URI val] (.setCellValue cell (str val)))
 (defmethod xls/cell-mutator URI [^Cell cell ^URI val] (.setCellValue cell (str val)))
 (defmethod xls/cell-mutator URL [^Cell cell ^URI val] (.setCellValue cell (str val)))
 (defmethod xls/cell-mutator :default [^Cell cell val] (.setCellValue cell (str val)))
