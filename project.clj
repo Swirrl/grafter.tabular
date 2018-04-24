@@ -1,4 +1,4 @@
-(defproject grafter/grafter.tabular "0.9.1-grafter-0.11.2-SNAPSHOT"
+(defproject grafter/grafter.tabular "0.11.2-SNAPSHOT"
   :description "Tools for the hard graft of data processing"
   :url "http://grafter.org/"
   :license {:name "Eclipse Public License - v1.0"
@@ -32,8 +32,7 @@
 
   :pedantic? true
 
-  :profiles {:clj-19 { :dependencies [[org.clojure/clojure "1.9.0-alpha14"]] }
-
+  :profiles {
              :dev {:plugins [[com.aphyr/prism "0.1.1"] ;; autotest support simply run: lein prism
                              [codox "0.8.10"]]
 
