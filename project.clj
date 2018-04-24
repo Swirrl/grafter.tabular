@@ -6,7 +6,7 @@
 
   :deploy-repositories [["releases" :clojars]]
 
-  :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [grafter "0.11.2"] ;; depends on grafter.rdf.protocols
                  [commons-io/commons-io "2.4"]
