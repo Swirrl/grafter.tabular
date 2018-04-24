@@ -1,4 +1,4 @@
-(defproject grafter/grafter.tabular "0.9.1-SNAPSHOT"
+(defproject grafter/grafter.tabular "0.9.1-grafter-0.11.2-SNAPSHOT"
   :description "Tools for the hard graft of data processing"
   :url "http://grafter.org/"
   :license {:name "Eclipse Public License - v1.0"
@@ -6,9 +6,9 @@
 
   :deploy-repositories [["releases" :clojars]]
 
-  :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/tools.logging "0.3.1"]
-                 [grafter "0.9.0"] ;; depends on grafter.rdf.protocols
+                 [grafter "0.11.2"] ;; depends on grafter.rdf.protocols
                  [commons-io/commons-io "2.4"]
                  [me.raynes/fs "1.4.6"]
                  [potemkin "0.4.3"]
