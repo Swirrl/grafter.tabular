@@ -1,9 +1,9 @@
-(ns grafter.tabular
+(ns grafter-2.tabular
   "Functions for processing tabular data."
   (:require [clojure
              [set :as set]
              [string :as str]]
-            [grafter.tabular.common :as tabc :refer [lift->vector map-keys]]
+            [grafter-2.tabular.common :as tabc :refer [lift->vector map-keys]]
             [incanter.core :as inc]
             [potemkin.namespaces :refer [import-vars]])
   (:import incanter.core.Dataset))
@@ -11,16 +11,16 @@
 ;; Load protocol definitions.  This could occur in the ns definition but putting
 ;; them in their means that namespace refactoring tools can clear them out
 ;; accidentally.  Better to explicitly require them to ensure they're loaded.
-(require '[grafter.tabular
+(require '[grafter-2.tabular
            [csv]
            [excel]])
 
 ;; This one is necessary for import-vars - again separating these from the ns
 ;; definition protects them against overzealous refactoring tools.
-(require '[grafter.tabular.melt])
+(require '[grafter-2.tabular.melt])
 
 (import-vars
- [grafter.tabular.common
+ [grafter-2.tabular.common
   dataset?
   column-names
   make-dataset
@@ -31,7 +31,7 @@
   with-metadata-columns
   without-metadata-columns
   resolve-column-id]
- [grafter.tabular.melt
+ [grafter-2.tabular.melt
   melt])
 
 
@@ -598,7 +598,7 @@ the specified column being cloned."
   should not be considered part of this namespaces public interface.
   It is only public because it is used by a macro."
   [ds row index]
-  (let [col-name (grafter.tabular/resolve-column-id ds index ::not-found)]
+  (let [col-name (grafter-2.tabular/resolve-column-id ds index ::not-found)]
     (if-not (= col-name ::not-found)
       (get row col-name ::not-found))))
 

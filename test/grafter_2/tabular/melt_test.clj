@@ -1,6 +1,6 @@
-(ns grafter.tabular.melt-test
-  (:require [grafter.tabular :refer [column-names make-dataset]]
-            [grafter.tabular.melt :refer :all]
+(ns grafter-2.tabular.melt-test
+  (:require [grafter-2.tabular :refer [column-names make-dataset]]
+            [grafter-2.tabular.melt :refer :all]
             [clojure.test :refer :all]))
 
 (defn datasets-equal?

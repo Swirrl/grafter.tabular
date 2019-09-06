@@ -1,6 +1,6 @@
-(ns grafter.sequences-test
+(ns grafter-2.sequences-test
   (:require [clojure.test :refer :all]
-            [grafter.sequences :refer :all]))
+            [grafter-2.sequences :refer :all]))
 
 (deftest column-names-seq-test
   (testing "iterates alphabet repeatedly like it's numeric"
@@ -19,4 +19,3 @@
   (testing "fills initial nil values with given value"
     (is (= [:a :a :b]
            (fill-when (complement nil?) '(nil nil :b) :a)))))
-

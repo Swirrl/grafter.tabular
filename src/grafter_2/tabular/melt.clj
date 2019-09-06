@@ -1,8 +1,8 @@
-(ns ^:no-doc grafter.tabular.melt
+(ns ^:no-doc grafter-2.tabular.melt
   "Functions for melting data and building variations on melt."
   (:require
    [clojure.set :as set]
-   [grafter.tabular.common :refer :all]))
+   [grafter-2.tabular.common :refer :all]))
 
 (defn mapcat-rows
   "Transforms a dataset by performing a mapcat operation on the

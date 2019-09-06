@@ -1,4 +1,4 @@
-(ns grafter.sequences
+(ns grafter-2.sequences
   "A library of useful lazy sequences."
   (:require [clojure.string :refer [blank?]]))
 

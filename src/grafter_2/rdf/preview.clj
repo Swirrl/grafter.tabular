@@ -1,9 +1,9 @@
-(ns grafter.rdf.preview
+(ns grafter-2.rdf.preview
   "Tool support for rendering previews of grafter.tabular graph-fn templates
   with values from datasets."
   (:require [clojure.walk]
             [clojure.edn :as edn]
-            [grafter.tabular :refer [make-dataset]])
+            [grafter-2.tabular :refer [make-dataset]])
   (:import [incanter.core Dataset]))
 
 (defn- symbolize-keys [m]
@@ -107,7 +107,7 @@
    (preview-graph dataset graphf row false))
 
   ([dataset graphf row render-constants?]
-   (let [form (:grafter.tabular/template (meta graphf))
+   (let [form (:grafter-2.tabular/template (meta graphf))
          bindings (first (second form))
          body-forms (drop 2 form)
          printable-row-data (->printable-form (nth (:rows dataset) row nil))
@@ -118,7 +118,7 @@
            (map (fn [body-form]
                   (let [replaced-vals (clojure.walk/postwalk-replace subs body-form)]
                     (if (= :render-constants render-constants?)
-                      (bind-constants (:grafter.tabular/defined-in-ns (meta graphf)) replaced-vals)
+                      (bind-constants (:grafter-2.tabular/defined-in-ns (meta graphf)) replaced-vals)
                       replaced-vals)))))})))
 
 (comment

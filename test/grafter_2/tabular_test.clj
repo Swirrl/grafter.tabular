@@ -1,13 +1,13 @@
-(ns grafter.tabular-test
+(ns grafter-2.tabular-test
   (:require [clojure.test :refer :all]
-            [grafter.sequences :as seqs]
-            [grafter.tabular.common :as tabc]
-            [grafter.tabular :refer :all]
-            [grafter.rdf.protocols :refer [->Quad]]
-            [grafter.rdf.templater :refer [graph triplify]]
-            [grafter.tabular.csv]
-            [grafter.tabular.excel]
-            [grafter.tabular.edn]
+            [grafter-2.sequences :as seqs]
+            [grafter-2.tabular.common :as tabc]
+            [grafter-2.tabular :refer :all]
+            [grafter-2.rdf.protocols :refer [->Quad]]
+            [grafter-2.rdf4j.templater :refer [graph triplify]]
+            [grafter-2.tabular.csv]
+            [grafter-2.tabular.excel]
+            [grafter-2.tabular.edn]
             [incanter.core :as inc]
             [clojure.java.io :as io])
   (:import [java.io File]))
@@ -130,7 +130,7 @@
 (defn has-metadata? [ds]
   (let [md (meta ds)]
     (is md "There is no metadata set")
-    (is (:grafter.tabular/data-source md) "There is no :data-source set.")))
+    (is (:grafter-2.tabular/data-source md) "There is no :data-source set.")))
 
 (defmethod tabc/read-dataset* ::test
   [source opts]
@@ -256,7 +256,7 @@
         (is (= '("Sheet1" "Sheet2") (mapcat keys datasets))))))
 
   (testing "Opening a sequential thing"
-    (let [ds (grafter.tabular/make-dataset [[1 2 3]])
+    (let [ds (grafter-2.tabular/make-dataset [[1 2 3]])
           datasets (read-datasets [{"foo" ds}])]
       (is (every? is-a-dataset? (mapcat vals datasets)))
       (is ((first datasets) "foo") ds)))
@@ -308,7 +308,7 @@
                (columns test-data [:a :b])) "should select columns 0 and 1 (a and b)"))
 
       (testing "works with infinite sequences"
-        (is (columns test-data (grafter.sequences/integers-from 5))
+        (is (columns test-data (seqs/integers-from 5))
             "Takes as much as it can from the supplied sequence and returns those columns.")
 
         (is (thrown? IndexOutOfBoundsException
@@ -803,12 +803,12 @@
                                           [a
                                            [b c]]))
               ds (make-dataset [["http://one/" "http://two/" "http://three/"]])
-              quad-meta (meta (first (my-graphfn ds)))] (is (= {:grafter.tabular/row {"a" "http://one/" "b" "http://two/" "c" "http://three/"}}
+              quad-meta (meta (first (my-graphfn ds)))] (is (= {:grafter-2.tabular/row {"a" "http://one/" "b" "http://two/" "c" "http://three/"}}
                                                                quad-meta)
                                                             "Adds the row that yielded each Quad as metadata")
 
              (is (= {"a" "http://one/" "b" "http://two/" "c" "http://three/"}
-                    (:grafter.tabular/row quad-meta))
+                    (:grafter-2.tabular/row quad-meta))
                  "Adds the row that yielded each Quad as metadata"))))))
 
 (deftest rename-test

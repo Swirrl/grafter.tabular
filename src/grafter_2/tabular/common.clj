@@ -1,7 +1,7 @@
-(ns grafter.tabular.common
+(ns grafter-2.tabular.common
   {:no-doc true}
   (:require [clj-excel.core :as xls]
-            [grafter.sequences :as seqs]
+            [grafter-2.sequences :as seqs]
             [clojure.java.io :as io]
             [incanter.core :as inc]
             [me.raynes.fs :as fs])
@@ -138,9 +138,9 @@
 (defn assoc-data-source-meta [output-ds data-source]
   "Adds metadata about where the dataset was loaded from to the object."
   (let [source-meta (cond
-                      (#{String File URI URL} (class data-source))  {:grafter.tabular/data-source data-source}
+                      (#{String File URI URL} (class data-source))  {:grafter-2.tabular/data-source data-source}
                       (instance? incanter.core.Dataset data-source) (meta data-source)
-                      :else {:grafter.tabular/data-source :datasource-unknown}) ]
+                      :else {:grafter-2.tabular/data-source :datasource-unknown}) ]
     (with-meta output-ds (merge (meta output-ds) source-meta))))
 
 (defmulti ^:no-doc read-dataset*

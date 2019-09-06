@@ -1,9 +1,9 @@
-(ns grafter.tabular.csv
+(ns grafter-2.tabular.csv
   {:no-doc true}
   (:require [clojure.data.csv :as csv]
             [clojure.java.io :as io]
-            [grafter.tabular.common :as tab]
-            [grafter.rdf.protocols :refer [raw-value]])
+            [grafter-2.tabular.common :as tab]
+            [grafter-2.rdf.protocols :refer [raw-value]])
   (:import [java.io IOException]
            [org.apache.commons.io.input BOMInputStream]))
 

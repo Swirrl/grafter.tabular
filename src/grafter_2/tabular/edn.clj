@@ -1,6 +1,6 @@
-(ns grafter.tabular.edn
+(ns grafter-2.tabular.edn
   {:no-doc true}
-  (:require [grafter.tabular.common :as tab]
+  (:require [grafter-2.tabular.common :as tab]
             [clojure.edn :as edn]
             [incanter.core :refer [->Dataset]]
             [clojure.java.io :refer [reader writer]])
