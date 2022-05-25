@@ -1,4 +1,4 @@
-(defproject grafter/grafter.tabular "0.11.2-SNAPSHOT"
+(defproject grafter/grafter.tabular "0.11.3-SNAPSHOT"
   :description "Tools for the hard graft of data processing"
   :url "http://grafter.org/"
   :license {:name "Eclipse Public License - v1.0"
@@ -6,15 +6,16 @@
 
   :deploy-repositories [["releases" :clojars]]
 
-  :dependencies [[org.clojure/clojure "1.9.0"]
+  :dependencies [[org.clojure/clojure "1.10.3"]
                  [org.clojure/tools.logging "0.3.1"]
                  [grafter "0.11.2"] ;; depends on grafter.rdf.protocols
-                 [commons-io/commons-io "2.4"]
+                 [commons-io/commons-io "2.11.0"]
+                 [org.apache.commons/commons-compress "1.21"]
                  [me.raynes/fs "1.4.6"]
                  [potemkin "0.4.3"]
 
                  [org.clojure/data.csv "0.1.3"]
-                 [grafter/clj-excel "0.0.9" :exclusions [commons-codec]]
+                 [grafter/clj-excel "0.0.11" :exclusions [commons-codec]]
                  [incanter/incanter-core "1.5.7" :exclusions [net.sf.opencsv/opencsv commons-codec]]]
 
 
