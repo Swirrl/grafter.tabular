@@ -1,6 +1,7 @@
 (defproject grafter/grafter.tabular "0.11.5"
   :description "Tools for the hard graft of data processing"
   :url "http://grafter.org/"
+  :min-lein-version "2.9.1"
   :license {:name "Eclipse Public License - v1.0"
             :url "https://www.eclipse.org/legal/epl-v10.html"}
 
